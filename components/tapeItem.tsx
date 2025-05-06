@@ -1,15 +1,12 @@
-import tape from "@/data/tapesData";
+import { Tapes } from "@/data/tapesData";
 import React from "react";
 
 import { Image, StyleSheet, Text, View } from "react-native";
 
 interface TapeItemProps {
-  tapeTitle: string;
-  tapeDescription: string;
-  tapeImage: string;
+  tape: Tapes;
 }
-const TapeItem = ({ tapeTitle, tapeDescription, tapeImage }: TapeItemProps) => {
-  let tape1 = tape[0];
+const TapeItem = ({ tape }: TapeItemProps) => {
   return (
     <View
       style={{
@@ -27,7 +24,7 @@ const TapeItem = ({ tapeTitle, tapeDescription, tapeImage }: TapeItemProps) => {
       <View style={{ display: "flex", justifyContent: "center" }}>
         <Image
           source={{
-            uri: tapeImage,
+            uri: tape.tapeImage,
           }}
           style={{
             width: 150,
@@ -53,7 +50,7 @@ const TapeItem = ({ tapeTitle, tapeDescription, tapeImage }: TapeItemProps) => {
             padding: 10,
           }}
         >
-          {tapeTitle}
+          {tape.tapeTitle}
         </Text>
         <View
           style={{
@@ -70,7 +67,7 @@ const TapeItem = ({ tapeTitle, tapeDescription, tapeImage }: TapeItemProps) => {
               padding: 10,
             }}
           >
-            {tapeDescription}
+            {tape.tapeDescription}
           </Text>
         </View>
       </View>

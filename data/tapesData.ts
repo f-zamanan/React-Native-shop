@@ -1,4 +1,4 @@
-interface Tapes {
+export interface Tapes {
   tapeTitle: string;
   tapeDescription: string;
   tapeImage: string;

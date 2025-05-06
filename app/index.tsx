@@ -1,5 +1,4 @@
-import TapeItem from "@/components/tapeItem";
-import tape from "@/data/tapesData";
+import TapeList from "@/components/TapeList";
 import { View } from "react-native";
 import {
   GestureHandlerRootView,
@@ -7,11 +6,6 @@ import {
 } from "react-native-gesture-handler";
 
 export default function Index() {
-  let tape1 = tape[0];
-  let tape2 = tape[1];
-  let tape3 = tape[2];
-  let tape4 = tape[3];
-
   return (
     <View
       style={{
@@ -22,7 +16,7 @@ export default function Index() {
     >
       <GestureHandlerRootView>
         <ScrollView showsVerticalScrollIndicator={false}>
-          <TapeItem
+          {/* <TapeItem
             tapeTitle={tape1.tapeTitle}
             tapeImage={tape1.tapeImage}
             tapeDescription={tape1.tapeDescription}
@@ -81,7 +75,9 @@ export default function Index() {
             tapeTitle={tape4.tapeTitle}
             tapeImage={tape4.tapeImage}
             tapeDescription={tape1.tapeDescription}
-          />
+          /> */}
+
+          <TapeList />
         </ScrollView>
       </GestureHandlerRootView>
     </View>
