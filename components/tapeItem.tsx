@@ -3,7 +3,12 @@ import React from "react";
 
 import { Image, StyleSheet, Text, View } from "react-native";
 
-const TapeItem = () => {
+interface TapeItemProps {
+  tapeTitle: string;
+  tapeDescription: string;
+  tapeImage: string;
+}
+const TapeItem = ({ tapeTitle, tapeDescription, tapeImage }: TapeItemProps) => {
   let tape1 = tape[0];
   return (
     <View
@@ -11,7 +16,7 @@ const TapeItem = () => {
         display: "flex",
         flexDirection: "row",
         justifyContent: "space-around",
-        marginTop: 10,
+        // marginTop: 10,
         padding: 10,
         // backgroundColor: "red",
         width: "100%",
@@ -19,17 +24,26 @@ const TapeItem = () => {
         borderColor: "grey",
       }}
     >
-      <Image
-        source={{
-          uri: tape1.tapeImage,
-        }}
-        style={{ width: 150, height: 150, padding: 10, borderRadius: 15 }}
-      />
+      <View style={{ display: "flex", justifyContent: "center" }}>
+        <Image
+          source={{
+            uri: tapeImage,
+          }}
+          style={{
+            width: 150,
+            height: 150,
+            padding: 10,
+            borderRadius: 15,
+          }}
+        />
+      </View>
+
       <View
         style={{
           display: "flex",
           justifyContent: "center",
           margin: 10,
+          width: 240,
         }}
       >
         <Text
@@ -39,7 +53,7 @@ const TapeItem = () => {
             padding: 10,
           }}
         >
-          {tape1.tapeTitle}
+          {tapeTitle}
         </Text>
         <View
           style={{
@@ -52,11 +66,11 @@ const TapeItem = () => {
         >
           <Text
             style={{
-              fontSize: 16,
+              fontSize: 18,
               padding: 10,
             }}
           >
-            {tape1.tapeDescription}
+            {tapeDescription}
           </Text>
         </View>
       </View>
